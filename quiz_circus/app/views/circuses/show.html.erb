@@ -1,1 +1,15 @@
+<h2><%= @circus.name %></h2>
+<h2><%= @circus.image_url %></h2>
+<br>
 
+<% @circus.entertainers.each do |entertainer| %>
+  <div class="circus">
+  	<%= entertainer.name %>
+  	<%= entertainer.specialty %>
+  	<%= link_to 'Edit', edit_entertainer_path(@circus, entertainer) %> 
+  	<%= link_to 'Delete', entertainer_path(@circus, entertainer), method: :delete, data: {confirm: "Are you sure you want to delete?"} %>
+  </div>
+<% end %>
+<br>
+
+<%= link_to "Back to Circus Home", circuses_path %>

@@ -4,7 +4,9 @@ class CircusesController < ApplicationController
   end
 
   def show
-
+    @circus = Circus.find(params[:id])
+    # why can't it find the id?:
+    # Couldn't find Circus with 'id'=circus
   end
 
   def new
